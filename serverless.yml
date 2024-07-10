@@ -1,0 +1,29 @@
+org: dedeard
+service: demo
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  api:
+    handler: dist/lambda.handler
+    events:
+      - httpApi: '*'
+    layers:
+      - arn:aws:lambda:us-east-1:730335295088:layer:common:2
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+build:
+  esbuild:
+    bundle: true
+    external:
+      - '@aws-sdk/*'
+      - 'sharp'
+    exclude:
+      - '@aws-sdk/*'
+      - 'sharp'
+    packages: external
