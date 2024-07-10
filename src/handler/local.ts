@@ -1,8 +1,8 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-import Application from './app'
-import { logger } from './config/logger'
+import Application from '../app'
+import { logger } from '../config/logger'
 
 /**
  * Initialize the application and start the server

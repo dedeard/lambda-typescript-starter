@@ -4,12 +4,12 @@
   "description": "skeleton",
   "author": "Dede Ard<me@dedeard.my.id>",
   "scripts": {
-    "lint": "eslint '*.ts' --quiet --fix",
-    "format": "prettier --write '*.ts' '*.json'",
+    "lint": "eslint '**/*.ts' --quiet --fix",
+    "format": "prettier --write '**/*.ts' '**/*.json'",
     "build": "npm run format && rm -rf dist && tsc",
     "deploy": "npm run build && serverless deploy",
     "offline": "npm run build && serverless offline",
-    "dev": "ts-node-dev --no-notify --respawn --transpile-only ./src/local.ts"
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only ./src/handler/local.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.613.0",

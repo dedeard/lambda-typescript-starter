@@ -7,7 +7,7 @@ provider:
 
 functions:
   api:
-    handler: dist/lambda.handler
+    handler: dist/handler/lambda.handler
     events:
       - httpApi: '*'
     layers:
